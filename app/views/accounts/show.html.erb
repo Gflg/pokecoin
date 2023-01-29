@@ -1,0 +1,76 @@
+<p style="color: green"><%= notice %></p>
+
+<div style="text-align: center;">
+  <%= render @account %>
+
+  <div>
+    <p>
+      <strong>Earns in account:</strong>
+      <% if @earns_in_account >= 0 %>
+        <p style="color: green; margin-left: 10px;"><%= @earns_in_account %></p>
+      <% else %>
+        <p style="color: red; margin-left: 10px;"><%= @earns_in_account %></p>
+      <% end %>
+    </p>
+  </div>
+
+  <div>
+    <%= link_to "Back to accounts", accounts_path %> |
+    <%= link_to "See history of transactions", account_transactions_path(account_id: @account.id) %> |
+    <%= link_to "Buy a pokemon", buy_path(account_id: @account.id) %>
+  </div>
+</div>
+
+<h2 style="text-align: center;">Pokemons in <%= @account.username %>'s wallet</h2>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+<div class="container mt-3 mb-4">
+  <div class="col-lg-9 mt-4 mt-lg-0">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="user-dashboard-info-box table-responsive mb-0 bg-white p-4 shadow-sm">
+          <table class="table manage-candidates-top mb-0">
+            <thead>
+              <tr>
+                <th>Pokémon Name</th>
+                <th class="text-center">Paid Price</th>
+                <th class="action text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @account_pokemons.each do |pokemon_in_wallet| %>
+                <tr class="candidates-list">
+                  <td class="title">
+                    <div class="thumb">
+                      <%= image_tag pokemon_in_wallet.pokemon.image_url %>
+                    </div>
+                    <div class="candidate-list-details">
+                      <div class="candidate-list-info">
+                        <div class="candidate-list-title">
+                          <h5 class="mb-0"><%= pokemon_in_wallet.pokemon.display_name %></h5>
+                        </div>
+                        <div class="candidate-list-option">
+                          <ul class="list-unstyled">
+                            <li>Pokédex ID: <%= pokemon_in_wallet.pokemon.id %></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="candidate-list-favourite-time text-center">
+                    <span class="candidate-list-time order-1" style="margin-left:30%;"><%= number_to_currency(pokemon_in_wallet.account_transaction.dollar_price) %></span>
+                  </td>
+                  <td>
+                    <ul class="list-unstyled mb-0 d-flex justify-content-end">
+                      <%= link_to "Sell", sell_path(account_id: @account.id, pokemon_id: pokemon_in_wallet.id) %>
+                    </ul>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

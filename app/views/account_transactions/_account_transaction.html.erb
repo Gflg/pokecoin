@@ -1,0 +1,27 @@
+<div id="<%= dom_id account_transaction %>">
+  <p>
+    <strong>Dollar price:</strong>
+    <%= account_transaction.dollar_price %>
+  </p>
+
+  <p>
+    <strong>Pokemon:</strong>
+    <%= account_transaction.pokemon_in_wallet.pokemon.name.capitalize %>
+  </p>
+
+  <p>
+    <strong>Account username:</strong>
+    <%= account_transaction.account.username %>
+  </p>
+
+  <p>
+    <strong>Transaction type:</strong>
+    <%= account_transaction.transaction_type %>
+  </p>
+
+  <p>
+    <strong>Creation date:</strong>
+    <%= account_transaction.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
+  </p>
+
+</div>

@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Transactions</h1>
+
+<div id="transactions">
+  <% @transactions.each do |transaction| %>
+    <%= render transaction %>
+    <br>
+  <% end %>
+</div>
+
+<% if params[:account_id].nil? %>
+  <%= link_to "Back to accounts", accounts_path %>
+<% else %>
+  <%= link_to "Back to account", account_path(@account) %>
+<% end %>  

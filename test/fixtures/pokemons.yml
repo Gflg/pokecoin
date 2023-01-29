@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+pokemon_one:
+  id: 1
+  name: Pokemon1
+  base_experience: 300
+  btc_price: 0.001
+
+pokemon_two:
+  id: 2
+  name: Pokemon2
+  base_experience: 200
+  btc_price: 0.0001

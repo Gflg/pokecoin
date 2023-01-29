@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dollar_price: 9.99
+  pokemon_in_wallet_id: 1
+  account_id: 1
+  transaction_type: Buy
+
+two:
+  dollar_price: 9.99
+  pokemon_in_wallet_id: 2
+  account_id: 2
+  transaction_type: Buy
+
+three:
+  dollar_price: 9.99
+  pokemon_in_wallet_id: 3
+  account_id: 2
+  transaction_type: Buy
+
+four:
+  dollar_price: 9.99
+  pokemon_in_wallet_id: 3
+  account_id: 2
+  transaction_type: Sell

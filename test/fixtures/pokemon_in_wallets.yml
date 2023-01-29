@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+pokemon_in_wallet_one:
+  id: 1
+  pokemon_id: 1
+  account_id: 1
+  is_sold: false
+
+pokemon_in_wallet_two:
+  id: 2
+  pokemon_id: 2
+  account_id: 2
+  is_sold: false
+
+pokemon_in_wallet_three:
+  id: 3
+  pokemon_id: 2
+  account_id: 2
+  is_sold: true
