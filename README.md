@@ -1,24 +1,34 @@
-# README
+# Desafio Pokécoin
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+O objetivo desse desafio é montar uma carteira digital de Pokémons que possuem seus próprios valores em Bitcoin.
 
-Things you may want to cover:
+## Especificações do projeto
 
-* Ruby version
+Esse projeto foi feito utilizando Ruby 3.0.3 com o framework Ruby on Rails 7.0.4.1.
+Para obter os dados dos Pokémons, foi utilizada a API https://pokeapi.co/docs/v2.
+Para obter a cotação do Bitcoin em dólares, foi utilizada a API https://blockchain.info/.
 
-* System dependencies
+## Acessando o sistema na nuvem
 
-* Configuration
+Esse sistema foi hospedado em um domínio da [Fly.io](https://fly.io) e pode ser acessado por [aqui](https://pokecoin.fly.dev/).
 
-* Database creation
+## Executando localmente
 
-* Database initialization
+Para executar o sistema localmente, é necessário seguir os passos abaixo.
 
-* How to run the test suite
+Na raíz do projeto, executar os seguintes passos após ter o Ruby e o Rails instalados em sua máquina:
 
-* Services (job queues, cache servers, search engines, etc.)
+```bundle install```  
+O comando acima irá instalar todas as dependências do projeto.
 
-* Deployment instructions
+```rails db:create```  
+Para criar os bancos de dados de desenvolvimento e de teste.
 
-* ...
+```rails db:migrate```  
+Para executar as migrações do banco e criar os modelos desse projeto.
+
+```rails db:seed```  
+Para popular o banco de dados com os Pokémons obtidos na API https://pokeapi.co/docs/v2. A execução desse comando pode ser um pouco demorada pois mais de 800 pokémons são recuperados via API.
+
+```rails s```  
+Para executar o servidor na porta 3000.
