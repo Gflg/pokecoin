@@ -72,3 +72,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "dockerfile-rails", ">= 1.0.0", :group => :development
+
+gem "pg", "~> 1.4"
+
+gem "redis", "~> 5.0"

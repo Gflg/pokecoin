@@ -7,7 +7,5 @@ class CreatePokemonInWallets < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
-    add_foreign_key "pokemon_in_wallets", "pokemons", column: "pokemon_id"
-    add_foreign_key "pokemon_in_wallets", "accounts", column: "account_id"
   end
 end
