@@ -5,9 +5,11 @@ pokemon_one:
   name: Pokemon1
   base_experience: 300
   btc_price: 0.001
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png
 
 pokemon_two:
   id: 2
   name: Pokemon2
   base_experience: 200
   btc_price: 0.0001
+  image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png
