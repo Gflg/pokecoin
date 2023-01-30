@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get "buy", to: "account_transactions#buy", as: "buy"
   post "buy", to: "account_transactions#confirm_buy", as: "confirm_buy"
 
-  # root "articles#index"
+  root "accounts#index"
 end
