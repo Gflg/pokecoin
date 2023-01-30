@@ -4,9 +4,9 @@ O objetivo desse desafio é montar uma carteira digital de Pokémons que possuem
 
 ## Especificações do projeto
 
-Esse projeto foi feito utilizando Ruby 3.0.3 com o framework Ruby on Rails 7.0.4.1.
-Para obter os dados dos Pokémons, foi utilizada a API https://pokeapi.co/docs/v2.
-Para obter a cotação do Bitcoin em dólares, foi utilizada a API https://blockchain.info/.
+Esse projeto foi feito utilizando Ruby 3.0.3 com o framework Ruby on Rails 7.0.4.1.  
+Para obter os dados dos Pokémons, foi utilizada a API https://pokeapi.co/docs/v2.  
+Para obter a cotação do Bitcoin em dólares, foi utilizada a API https://blockchain.info/.  
 
 ## Acessando o sistema na nuvem
 
