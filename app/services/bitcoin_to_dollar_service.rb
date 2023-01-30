@@ -1,3 +1,4 @@
+# This class is responsible for retrieving the current bitcoin value in dollars
 class BitcoinToDollarService
     def get_bitcoin_value_in_dollars
         response = conn.get("/ticker")

@@ -1,3 +1,4 @@
+# This class calculates earns for an account based on its pokemons that aren't sold
 class CalculateEarnsService
     def initialize(account, current_bitcoin_to_dollar_price)
         @account = account

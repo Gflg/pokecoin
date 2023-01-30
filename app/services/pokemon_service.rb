@@ -1,3 +1,4 @@
+# This class is responsible for retrieving pokémon info from an API
 class PokemonService
     def search_pokemon(pokemon_id)
         response = conn.get("/api/v2/pokemon/#{pokemon_id}/")

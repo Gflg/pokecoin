@@ -1,3 +1,4 @@
+# This class is used to process buy and sell pokémon transactions
 class ProcessTransactionService
     def initialize(params)
         @params = params
