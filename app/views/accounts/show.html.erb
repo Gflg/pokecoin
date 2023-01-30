@@ -34,9 +34,11 @@
           <table class="table manage-candidates-top mb-0">
             <thead>
               <tr>
-                <th>Pokémon Name</th>
-                <th class="text-center">Paid Price (USD)</th>
-                <th class="action text-right">Action</th>
+                <th>Pokémon</th>
+                <th class="text-center" style="width:15%">Paid Price (USD)</th>
+                <th class="text-center" style="width:20%">Current Price (USD)</th>
+                <th class="text-center" style="width:20%">Variation (USD)</th>
+                <th class="text-center" style="width:15%">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -61,6 +63,18 @@
                   </td>
                   <td class="candidate-list-favourite-time text-center">
                     <span class="candidate-list-time order-1" style="margin-left:30%;"><%= number_to_currency(pokemon_in_wallet.account_transaction.dollar_price) %></span>
+                  </td>
+                  <td class="candidate-list-favourite-time text-center">
+                    <span class="candidate-list-time order-1" style="margin-left:30%;"><%= number_to_currency(pokemon_in_wallet.pokemon.current_dollar_price) %></span>
+                  </td>
+                  <td class="candidate-list-favourite-time text-center">
+                    <% if pokemon_in_wallet.account_transaction.dollar_price - pokemon_in_wallet.pokemon.current_dollar_price > 0 %>
+                      <span class="candidate-list-time order-1" style="margin-left:20%; color:green;">$<%= pokemon_in_wallet.account_transaction.dollar_price - pokemon_in_wallet.pokemon.current_dollar_price %></span>
+                    <% elsif pokemon_in_wallet.account_transaction.dollar_price - pokemon_in_wallet.pokemon.current_dollar_price == 0 %>
+                      <span class="candidate-list-time order-1" style="margin-left:20%;">$<%= pokemon_in_wallet.account_transaction.dollar_price - pokemon_in_wallet.pokemon.current_dollar_price %></span>
+                    <% else %>
+                      <span class="candidate-list-time order-1" style="margin-left:20%; color:red;">$<%= pokemon_in_wallet.account_transaction.dollar_price - pokemon_in_wallet.pokemon.current_dollar_price %></span>
+                    <% end %>
                   </td>
                   <td>
                     <ul class="list-unstyled mb-0 d-flex justify-content-end">
