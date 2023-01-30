@@ -1,14 +1,18 @@
-<h1>Buy transaction</h1>
+<div style="text-align:center;">
+  <h1>Buy transaction</h1>
 
-<p>Account username: <%= @account.username %></p>
+  <div class="form-div">
+    <p>Account username: <%= @account.username %></p>
 
-<%= form_tag({ controller: 'account_transactions', action: 'confirm_buy', account_id: @account.id, transaction_type: "Buy" }, method: 'post') do %>
-  <p>Pokémon to buy: <%= select_tag('pokemon_id', options_from_collection_for_select(Pokemon.all, 'id', 'display_name'), prompt: "Please select a Pokemon") %> </p>
-  <%= submit_tag "Confirm buy", name: nil, class: 'btn' %>
-<% end %>
+    <%= form_tag({ controller: 'account_transactions', action: 'confirm_buy', account_id: @account.id, transaction_type: "Buy" }, method: 'post') do %>
+      <p>Pokémon to buy: <%= select_tag('pokemon_id', options_from_collection_for_select(Pokemon.all, 'id', 'display_name'), prompt: "Please select a Pokemon") %> </p>
+      <%= submit_tag "Confirm buy", name: nil, class: 'btn' %>
+    <% end %>
+  </div>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Back to transactions", account_transactions_path %>
+  <div>
+    <%= link_to "Back to account", account_path(@account) %>
+  </div>
 </div>

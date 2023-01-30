@@ -1,32 +1,34 @@
-<%= form_with(model: transaction) do |form| %>
-  <% if transaction.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+<div class="form-div">
+  <%= form_with(model: transaction) do |form| %>
+    <% if transaction.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
 
-      <ul>
-        <% transaction.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% transaction.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div>
+      <%= form.label :pokemon_id, style: "display: block" %>
+      <%= form.collection_select(:pokemon_id, Pokemon.all, :id, :name, {:include_blank => 'Please select a Pokemon'}) %>
+    </div>
+
+    <div>
+      <%= form.label :account_id, style: "display: block" %>
+      <%= form.collection_select(:account_id, Account.all, :id, :username, {:include_blank => 'Please select an Account'}) %>
+    </div>
+
+    <div>
+      <%= form.label :transaction_type, style: "display: block" %>
+      <%= form.select(:transaction_type, Transaction::TRANSACTION_TYPES) %>
+    </div>
+
+    <div>
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :pokemon_id, style: "display: block" %>
-    <%= form.collection_select(:pokemon_id, Pokemon.all, :id, :name, {:include_blank => 'Please select a Pokemon'}) %>
-  </div>
-
-  <div>
-    <%= form.label :account_id, style: "display: block" %>
-    <%= form.collection_select(:account_id, Account.all, :id, :username, {:include_blank => 'Please select an Account'}) %>
-  </div>
-
-  <div>
-    <%= form.label :transaction_type, style: "display: block" %>
-    <%= form.select(:transaction_type, Transaction::TRANSACTION_TYPES) %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

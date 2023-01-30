@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_27_172143) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_26_222532) do
   create_table "account_transactions", force: :cascade do |t|
     t.decimal "dollar_price"
     t.integer "pokemon_in_wallet_id", null: false
@@ -50,7 +50,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_27_172143) do
   add_foreign_key "account_transactions", "accounts"
   add_foreign_key "account_transactions", "pokemon_in_wallets"
   add_foreign_key "pokemon_in_wallets", "accounts"
-  add_foreign_key "pokemon_in_wallets", "accounts"
-  add_foreign_key "pokemon_in_wallets", "pokemons"
   add_foreign_key "pokemon_in_wallets", "pokemons"
 end

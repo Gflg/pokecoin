@@ -198,3 +198,9 @@ body{
 .user-dashboard-info-box .candidates-list .thumb {
     margin-right: 20px;
 }
+
+.form-div{
+    background-color: white;
+    width: 25%;
+    margin-left: 37%;
+}

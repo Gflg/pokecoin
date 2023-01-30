@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-# There are 1008 pokemons
+# There are 898 pokemons with data that we need
 service = PokemonService.new
-1.upto(1008) do |i|
+1.upto(898) do |i|
     response = service.search_pokemon(i)
     data = {
         :id => i,
