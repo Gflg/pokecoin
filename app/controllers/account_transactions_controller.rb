@@ -8,7 +8,7 @@ class AccountTransactionsController < ApplicationController
       @transactions = AccountTransactionFinder.new.call
     else
       @transactions = AccountTransactionFinder.new(account_id: params[:account_id]).call
-      @account = @transactions.first.account
+      @account = AccountFinder.new(id: params[:account_id]).call
     end
   end
 
